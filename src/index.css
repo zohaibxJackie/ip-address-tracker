@@ -17,6 +17,7 @@
 :root {
   --very-dark-grey: hsl(0, 0%, 17%);
   --dark-grey: hsl(0, 0%, 59%);
+  --white: hsl(0, 0%, 100%);
   --font-400: 400;
   --font-500: 500;
   --font-700: 700;
@@ -43,5 +44,31 @@ input, textarea, button, select {
   font: inherit;
 }
 
+header {
+  position: absolute;
+  top: 3rem;
+  min-width: 100vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
 
+header h1 {
+  color: var(--white);
+  font-weight: var(--font-500);
+  text-align: center;
+}
 
+.input-section {
+  display: flex;
+  input {
+    border: 0;
+    padding: 9px 5px;
+    border-radius: 10px 0 0 10px;
+  }
+  button {
+    border: 0;
+    background-color: var(--very-dark-grey);
+    padding: 7px;
+  }
+}
