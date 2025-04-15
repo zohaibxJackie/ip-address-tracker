@@ -6,6 +6,17 @@ import 'leaflet/dist/leaflet.css';
 import { getIpAddress } from '../services/getIpAddress';
 import { useEffect, useState } from 'react';
 import { Circles } from 'react-loader-spinner';
+import L from "leaflet"
+
+import customIconUrl from '../assets/images/marker.png';
+
+const customIcon = new L.Icon({
+  iconUrl: customIconUrl,
+  iconSize: [25, 41],  
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41]
+});
 
 const Mainpage = () => {
   const [ipAddress, setIpAddress] = useState("");
@@ -91,7 +102,7 @@ const Mainpage = () => {
           style={{ height: "100vh", width: "100vw" }}
         >
           <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-          <Marker position={[lattitude, longitude]}>
+          <Marker position={[lattitude, longitude]} icon={customIcon}>
             <Popup>IP Location</Popup>
           </Marker>
         </MapContainer> :
